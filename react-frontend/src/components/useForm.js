@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import BASE_URL from './../services/UserService';
-import axios from 'axios';
+import BASE_URL from "./../services/UserService";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -27,23 +28,22 @@ const useForm = (callback, validate) => {
     setIsSubmitting(true);
     console.log(values);
     postDataToServer(values);
-
   };
 
-  const postDataToServer=(data)=>{
-      console.log(data);
-      axios.post(`${BASE_URL}/registration`,data).then(
-          (response)=>{console.log(response);
-            console.log('success');
-        },
-        (error)=>{
-            console.log(error);
-            console.log('error');
-        }
-      )
-  }
-
-
+  const postDataToServer = (data) => {
+    console.log(data);
+    axios.post(`${BASE_URL}/registration`, data).then(
+      (response) => {
+        console.log(response);
+        console.log("success");
+      },
+      (error) => {
+        console.log(error);
+        console.log("error");
+        toast.error("error");
+      }
+    );
+  };
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {

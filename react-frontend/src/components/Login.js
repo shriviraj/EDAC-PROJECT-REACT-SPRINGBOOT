@@ -1,10 +1,13 @@
 import React from "react";
-import validate from './ValidateInfoLogin';
+import validate from "./ValidateInfoLogin";
 import "./Form.css";
 import useLogin from "./useLogin";
 
 const Login = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values , errors} = useLogin(submitForm, validate);
+  const { handleChange, handleSubmit, values, errors } = useLogin(
+    submitForm,
+    validate
+  );
 
   return (
     <div className="">

@@ -1,24 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import React from "react";
+import {  NavLink } from "react-router-dom";
+import {  Nav, NavItem } from "reactstrap";
 
-const Menus = () =>{
-    return (
-        <ListGroup>
-            <Link className="list-group-item list-group-item-action"tag="a" to='/' action>
-                Home
-            </Link>
-            <Link className="list-group-item list-group-item-action"tag="a" to='/Form' action>
-                Register
-            </Link>
-            {/* <Link className="list-group-item list-group-item-action"tag="a" to='/Allcourses' action>
+const Menus = () => {
+  return (
+    <div className="align-center">
+    
+    <Nav>
+      <NavItem>
+      <NavLink
+        className="list-group-item list-group-item-action"
+        tag="a"
+        to="/"
+        action
+      >
+        Home
+      </NavLink>
+      </NavItem>
+      <NavItem>
+      <NavLink
+        className="list-group-item list-group-item-action"
+        tag="a"
+        to="/Form"
+        action
+      >
+        Register
+      </NavLink>
+      </NavItem>
+      {/* <Link className="list-group-item list-group-item-action"tag="a" to='/Allcourses' action>
                 View Courses
             </Link> */}
-            <Link className="list-group-item list-group-item-action"tag="a" to='#!' action>
-                About
-            </Link>
-            
-        </ListGroup>
-    )
-}
+            <NavItem>
+      <NavLink
+        className="list-group-item list-group-item-action"
+        tag="a"
+        to="#!"
+        action
+      >
+        About
+      </NavLink>
+      </NavItem>
+      <NavItem>
+      <NavLink
+        className="list-group-item list-group-item-action"
+        tag="a"
+        to="/Allcourses"
+        action
+      >
+        AllCourses
+      </NavLink>
+      
+      </NavItem>
+      </Nav>
+   </div>
+  );
+};
 export default Menus;

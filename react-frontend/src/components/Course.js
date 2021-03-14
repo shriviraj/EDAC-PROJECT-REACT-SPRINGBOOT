@@ -3,23 +3,41 @@ import {
   Card,
   Button,
   CardBody,
-  CardText,
   CardSubtitle,
-  
+  Container,
+  CardTitle,
 } from "reactstrap";
 
 const Course = ({ course }) => {
   return (
-    <Card>
-      <CardBody className="text-center">
-        <CardSubtitle className="font-weight-bold"> { course.title }</CardSubtitle>
-        <CardText>Rating: { course.rating }</CardText>
-        <container>
-          <Button color="danger" >Delete</Button>
-          <Button color="warning ml-3">Update</Button>
-        </container>
-      </CardBody>
-    </Card>
+    <div>
+      <Card>
+        <CardBody>
+          <CardTitle tag="h5"> {course.courseName}</CardTitle>
+          <br />
+          <CardSubtitle tag="h6" className="mb-2 text-muted">
+            Rating: {course.rating}
+          </CardSubtitle>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">
+            {" "}
+            Price: {course.price} Tutor: {course.author}
+          </CardSubtitle>
+          <br />
+          <Container>
+            <Button color="primary">Add</Button>
+            <Button color="danger ml-3">Delete</Button>
+          </Container>
+        </CardBody>
+      </Card>
+    </div>
+    /*  <div className="course-container">
+      <div>{course.courseName}</div>
+      <div> Rating: {course.rating}</div>
+      <div>
+        Price: {course.price} Tutor: {course.author}
+      </div>
+    </div> */
   );
 };
+
 export default Course;

@@ -6,10 +6,11 @@ import Login from "./Login";
 
 const Home = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [whoIsThis, setwhoIsThis] = useState("user");
+  const [whoIsThis, setWhoIsThis] = useState("user");
   function submitForm(val, who) {
     setIsSubmitted(val);
-    setwhoIsThis(who);
+    console.log("inside form" + val + who);
+    setWhoIsThis(who);
   }
 
   return (

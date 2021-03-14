@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import BASE_URL from "./../services/UserService";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const useLogin = (callback, validate) => {
   let res;
@@ -10,7 +11,7 @@ const useLogin = (callback, validate) => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [ok, setok] = useState(false);
+  //const [ok, setok] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,11 +49,14 @@ const useLogin = (callback, validate) => {
           console.log(response.data);
           // renderComponentLogin(response.data);
           res = response.data;
+          let resp = response.data;
+          callback(true, resp);
         },
         (error) => {
           console.log(error);
           console.log("error");
           callback(false, "");
+          toast.error("Error");
         }
       );
   };

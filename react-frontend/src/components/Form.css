@@ -1,6 +1,6 @@
 .form-container {
   margin: 10px auto;
- /*  width: 900px; */
+  /*  width: 900px; */
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
@@ -10,13 +10,31 @@
 }
 .home-container {
   margin: 10px auto;
-  
+
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
   height: 600px;
   display: grid;
-  
+  margin-top: 10px;
+}
+.header-container {
+  margin: 10px auto;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 7px 10px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 10px;
+  height: 75px;
+  display: grid;
+}
+.course-container {
+  margin: 10px auto;
+
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 10px;
+  height: 200px;
+  display: inline-block;
 }
 .close-btn {
   position: absolute;
@@ -38,15 +56,11 @@
   position: relative;
 }
 .home-Educate {
-  background: linear-gradient(
-    
-    rgb(39, 176, 255) 0%,
-    rgb(0, 232, 236) 100%
-  );
+  background: linear-gradient(rgb(39, 176, 255) 0%, rgb(0, 232, 236) 100%);
   border-radius: 10px 0 0 10px;
   position: relative;
 }
-.home-content{
+.home-content {
   margin-top: 40px;
   text-align: center;
 }
@@ -173,7 +187,7 @@
   background: linear-gradient(
     90deg,
     rgb(74, 140, 179) 0%,
-    rgb(21, 200, 206) 100% 
+    rgb(21, 200, 206) 100%
   );
 }
 .home-input-login:hover {

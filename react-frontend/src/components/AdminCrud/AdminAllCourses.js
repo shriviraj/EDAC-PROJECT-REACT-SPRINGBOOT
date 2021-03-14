@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import BASE_URL from "./../services/UserService";
+import BASE_URL from "./../../services/UserService";
 
-import Course from "./Course";
+import Course from "./AdminCourses";
 
-const Allcourse = () => {
+const AdminAllcourse = () => {
   //function to call server
   const getAllCoursesFromServer = () => {
     axios.get(`${BASE_URL}/courses`).then(
@@ -22,18 +22,18 @@ const Allcourse = () => {
 
   useEffect(() => {
     getAllCoursesFromServer();
-  }, []);
+  },[]);
 
   const [courses, setCourses] = useState([]);
 
   return (
     <div>
-      {/* <h1>All Courses</h1> */}
-      <p>List of courses are:</p>
+      <h3>List of all Courses:</h3>
+      <p></p>
       {courses.length > 0
         ? courses.map((item) => <Course key={item.courseId} course={item} />)
         : "No courses"}
     </div>
   );
 };
-export default Allcourse;
+export default AdminAllcourse;
