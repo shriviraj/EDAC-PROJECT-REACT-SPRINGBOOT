@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import BASE_URL from "./../services/UserService";
 
 import Course from "./Course";
+import Navbar from "./Navbar2/Navbar";
 
 const Allcourse = () => {
   //function to call server
@@ -28,6 +29,7 @@ const Allcourse = () => {
 
   return (
     <div>
+      <Navbar/>
       {/* <h1>All Courses</h1> */}
       <p>List of courses are:</p>
       {courses.length > 0

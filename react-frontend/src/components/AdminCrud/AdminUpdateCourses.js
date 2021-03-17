@@ -5,7 +5,10 @@ import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import BASE_URL from "../../services/UserService";
 import Navbar from "../Navbar2/Navbar";
 import "./Admin.css";
-export const AdminAddCourses = () => {
+
+const AdminUpdateCourses = ({ course }) => {
+
+  console.log(course + " from updateCourse");
   const [values, setValues] = useState({
     courseId: "",
     courseName: "",
@@ -13,6 +16,7 @@ export const AdminAddCourses = () => {
     author: "",
   });
   //form handler function
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -50,6 +54,7 @@ export const AdminAddCourses = () => {
             Course-ID:
           </Label>
           <Input
+            value={course.courseId}
             className="form-input"
             type="number"
             placeholder="enter here"
@@ -63,6 +68,7 @@ export const AdminAddCourses = () => {
             Course Name:
           </Label>
           <Input
+            value={course.courseName}
             className="form-input"
             type="text"
             placeholder="enter here"
@@ -76,6 +82,7 @@ export const AdminAddCourses = () => {
             Course Price:
           </Label>
           <Input
+            value={course.price}
             className="form-input"
             type="number"
             placeholder="enter here"
@@ -89,6 +96,7 @@ export const AdminAddCourses = () => {
             Course Tutor:
           </Label>
           <Input
+            value={course.author}
             className="form-input"
             type="text"
             placeholder="enter here"
@@ -106,3 +114,4 @@ export const AdminAddCourses = () => {
     </div>
   );
 };
+export default AdminUpdateCourses;

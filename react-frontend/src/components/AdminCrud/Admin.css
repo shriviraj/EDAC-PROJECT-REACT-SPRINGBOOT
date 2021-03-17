@@ -1,0 +1,118 @@
+.AdminAddCourse-container {
+  background: linear-gradient(to right, #a72264 0%, #b13a3a 100%);
+
+  margin: 0px auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 30px;
+  height: 600px;
+  display: grid;
+  margin-top: 40px;
+}
+
+.AdminAddCourse-container h2 {
+  padding-top: 20px;
+  color: #fff;
+}
+
+.AdminAddCourse-content {
+  background: linear-gradient(to right, #a72264 0%, #b13a3a 100%);
+  border-radius: 0px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.AdminAddCourses-input-btn {
+  width: 20%;
+  height: 50px;
+  margin-top: 5px;
+  margin-left: 430px;
+  border-radius: 2px;
+  
+  background: linear-gradient(
+    90deg,
+    rgb(74, 140, 179) 0%,
+    rgb(21, 200, 206) 100%
+  );
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.AdminAddCourses-input-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(235, 92, 92) 0%,
+    rgb(87, 155, 231) 100%
+  );
+  transition: all 0.4s ease-out;
+}
+
+.AddCourseform-label {
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 7px;
+  margin-left: 0px;
+  color: #fff;
+}
+.table {
+  background: rgba(255, 255, 255, 0.623);
+  border-radius: 0px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.form-input {
+  margin: 10px auto;
+  display: block;
+  padding-left: 30px;
+  /* outline: auto; */
+  border-radius: 10px;
+  height: 40px;
+  width: 40%;
+  border: none;
+}
+
+.form-group {
+  padding-left: 80px;
+  padding-right: 80px;
+  opacity: 80%;
+}
+
+.CourseHeader tr {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.555);
+}
+
+.AdminCourseDisp td {
+  text-align: center;
+  column-width: 100px;
+}
+
+.AdminCourseDisp td:nth-child(4) {
+  text-align: center;
+  column-width: 200px;
+}
+
+.AdminCourseDisp td:nth-child(3) {
+  text-align: center;
+  column-width: 200px;
+}
+
+.CourseHeader th {
+  text-align: center;
+  column-width: 100px;
+}
+
+.CourseHeader th:nth-child(4) {
+  text-align: center;
+  column-width: 200px;
+}
+
+.CourseHeader th:nth-child(3) {
+  text-align: center;
+  column-width: 200px;
+}

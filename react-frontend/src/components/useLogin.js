@@ -25,8 +25,9 @@ const useLogin = (callback, validate) => {
     e.preventDefault();
 
     setErrors(validate(values));
-    getDataFromServer(values);
     setIsSubmitting(true);
+    getDataFromServer(values);
+
     console.log(values);
   };
 
@@ -49,8 +50,8 @@ const useLogin = (callback, validate) => {
           console.log(response.data);
           // renderComponentLogin(response.data);
           res = response.data;
-          let resp = response.data;
-          callback(true, resp);
+          //let resp = response.data;
+          callback(true, res);
         },
         (error) => {
           console.log(error);

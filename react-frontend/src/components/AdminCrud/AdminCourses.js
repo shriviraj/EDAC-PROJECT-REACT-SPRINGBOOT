@@ -2,24 +2,12 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
-import {
-  Card,
-  Button,
-  CardBody,
-  CardSubtitle,
-  Container,
-  CardTitle,
-} from "reactstrap";
+import { Button, Table } from "reactstrap";
 import BASE_URL from "../../services/UserService";
+import AdminUpdateCourses from "./AdminUpdateCourses";
 
 const AdminCourse = ({ course }) => {
-  const history = useHistory();
-
-  const updateCourse = (course) => {
-    console.log(course.courseId);
-    let path = `/AdminAddCourses`;
-    history.push(path);
-  };
+  //  const history = useHistory();
 
   const deleteCourse = (courseId) => {
     console.log(courseId);
@@ -47,43 +35,45 @@ const AdminCourse = ({ course }) => {
   };
 
   return (
-    <div>
-      <Card>
-        <CardBody className="course-container ">
-          <CardTitle tag="h5"> {course.courseName}</CardTitle>
-          <br />
-          <CardSubtitle tag="h6" className="mb-2 text-muted">
-            Rating: {course.rating}
-          </CardSubtitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">
-            {" "}
-            Price: {course.price} Tutor: {course.author}
-          </CardSubtitle>
-          <br />
-          <Container>
-            <Button
-              color="primary"
-              onClick={() => updateCourse(course)}
-            >
-              Update
-            </Button>
-            <Button
-              color="danger ml-3"
-              onClick={() => deleteCourse(course.courseId)}
-            >
-              Delete
-            </Button>
-          </Container>
-        </CardBody>
-      </Card>
-    </div>
-    /*  <div className="course-container">
+    <>
+      <Table hover className="AdminCourseDisp">
+        <tbody>
+          <tr className="text-center ">
+            <td tag="h5"> {course.courseName}</td>
+            <td tag="h6" className="mb-2 text-muted">
+              Rating: {course.rating}
+            </td>
+            <td tag="h6" className="mb-2 text-muted">
+              {" "}
+              Price: {course.price} Tutor: {course.author}
+            </td>
+            <td>
+              <Button
+                color="primary"
+                onClick={() => {
+                  console.log(course);
+                }}
+              >
+                Update
+              </Button>
+              <Button
+                color="danger ml-3"
+                onClick={() => deleteCourse(course.courseId)}
+              >
+                Delete
+              </Button>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+      {/* <div className="course-container">
       <div>{course.courseName}</div>
       <div> Rating: {course.rating}</div>
       <div>
         Price: {course.price} Tutor: {course.author}
       </div>
-    </div> */
+  </div> */}
+    </>
   );
 };
 

@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Table } from "reactstrap";
 import BASE_URL from "./../../services/UserService";
 
-import Course from "./AdminCourses";
+import AdminCourse from "./AdminCourses";
 
 const AdminAllcourse = () => {
   //function to call server
@@ -20,18 +21,28 @@ const AdminAllcourse = () => {
 
   //loading course function
 
+  const [courses, setCourses] = useState([]);
+
   useEffect(() => {
     getAllCoursesFromServer();
-  },[]);
-
-  const [courses, setCourses] = useState([]);
+  });
 
   return (
     <div>
-      <h3>List of all Courses:</h3>
-      <p></p>
+      <Table className="CourseHeader">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Rating</th>
+            <th>Author & price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </Table>
       {courses.length > 0
-        ? courses.map((item) => <Course key={item.courseId} course={item} />)
+        ? courses.map((item) => (
+            <AdminCourse key={item.courseId} course={item} />
+          ))
         : "No courses"}
     </div>
   );

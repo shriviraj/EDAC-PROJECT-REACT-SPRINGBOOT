@@ -11,7 +11,7 @@ import {
 const Course = ({ course }) => {
   return (
     <div>
-      <Card>
+      <Card className="">
         <CardBody>
           <CardTitle tag="h5"> {course.courseName}</CardTitle>
           <br />

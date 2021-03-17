@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormSignup from "./FormSignup";
+import Navbar from "./Navbar/Navbar"
 import FormSuccess from "./FormSuccess";
 import "./Form.css";
 
@@ -12,8 +13,8 @@ const Form = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="form-container">
-        <span className="close-btn">x</span>
         <div className="form-content-left">
           {/* <img src="img/logo2.jpg" className="form-img" /> */}
           <div className="form-Educate">EducateNow</div>

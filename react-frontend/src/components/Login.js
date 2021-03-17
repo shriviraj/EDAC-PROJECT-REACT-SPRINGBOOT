@@ -10,7 +10,7 @@ const Login = ({ submitForm }) => {
   );
 
   return (
-    <div className="">
+    <div className="LoginData">
       <form onSubmit={handleSubmit} className="form" noValidate>
         <div className="form-inputs">
           <label className="form-label">Email</label>

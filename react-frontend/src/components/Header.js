@@ -11,7 +11,7 @@ function Header() {
           <h1 className="text-center my-3">Welcome to EducateNow</h1>
         </CardBody>
       </Card> */
-      <Menus />}
+      }
     </div>
   );
 }
