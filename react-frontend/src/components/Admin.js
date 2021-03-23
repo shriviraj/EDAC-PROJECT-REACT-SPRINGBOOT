@@ -12,7 +12,9 @@ const Admin = () => {
   return (
     <div>
       <Navbar />
-
+      <button className="AdminAddCourses-input-btn" onClick={IGotClicked}>
+        Add Course
+      </button>
       {/* <Link
         className="list-group-item list-group-item-action text-center"
         tag="a"
@@ -23,9 +25,7 @@ const Admin = () => {
       </Link> */}
 
       <AdminAllCourse />
-      <button className="AdminAddCourses-input-btn" onClick={IGotClicked}>
-        Add Course
-      </button>
+     
     </div>
   );
 };

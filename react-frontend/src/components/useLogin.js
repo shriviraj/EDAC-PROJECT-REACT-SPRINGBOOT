@@ -3,6 +3,7 @@ import BASE_URL from "./../services/UserService";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+
 const useLogin = (callback, validate) => {
   let res;
   const [values, setValues] = useState({
@@ -27,13 +28,13 @@ const useLogin = (callback, validate) => {
     setErrors(validate(values));
     setIsSubmitting(true);
     getDataFromServer(values);
-
+    
     console.log(values);
   };
-
+ 
   const getDataFromServer = (data) => {
     console.log(data);
-    const email = data.email;
+    const email = data.email;//send 
     const password = data.password;
 
     axios

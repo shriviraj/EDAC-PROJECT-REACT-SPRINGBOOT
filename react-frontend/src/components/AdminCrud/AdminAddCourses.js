@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import BASE_URL from "../../services/UserService";
@@ -21,6 +22,14 @@ export const AdminAddCourses = () => {
     });
   };
 
+ 
+  
+  const history = useHistory();
+  const IGotClicked = () => {
+    let path = `/Admin`;
+    history.push(path);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(values);
@@ -39,6 +48,7 @@ export const AdminAddCourses = () => {
       }
     );
   };
+
   return (
     <div>
       <Navbar />
@@ -69,6 +79,7 @@ export const AdminAddCourses = () => {
             name="courseName"
             id="courseName"
             onChange={handleChange}
+            required
           />
         </FormGroup>
         <FormGroup className="AdminAddCourse-content">
@@ -82,6 +93,7 @@ export const AdminAddCourses = () => {
             name="price"
             id="price"
             onChange={handleChange}
+            required
           />
         </FormGroup>
         <FormGroup className="AdminAddCourse-content">
@@ -95,10 +107,14 @@ export const AdminAddCourses = () => {
             name="author"
             id="author"
             onChange={handleChange}
+            required
           />
         </FormGroup>
         <Container className="text-center">
-          <Button type="submit" color="success">
+          <Button color="primary" onClick={IGotClicked} outline>
+            Go Back
+          </Button>
+          <Button  type="submit" color="success ml-4">
             Add Course
           </Button>
         </Container>

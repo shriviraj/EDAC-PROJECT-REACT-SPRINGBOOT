@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 //import { Container, Row, Col } from "reactstrap";
 //import Course from "./components/Course";
 //import Header from "./components//Header";
 //import Menus from "./components//Menus";
-import Allcourse from "./components/Allcourses";
+import AllCourses from "./components/User/AllCourses";
 import Form from "./components//Form";
 import Home from "./components/Home";
 import Admin from "./components/Admin";
@@ -15,43 +15,56 @@ import { AdminAddCourses } from "./components/AdminCrud/AdminAddCourses";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar/Navbar";
 import AdminUpdateCourses from "./components/AdminCrud/AdminUpdateCourses";
-function App() {
-  return (
-    <div className="container">
-      <ToastContainer
-        position="bottom-right"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+import UserCourses from "./components/User/UserCourses";
+import UserCart from "./components/User/UserCart/UserCart";
 
-      <Router>
-        {/* 
+export const AppContext = React.createContext();
+
+function App() {
+  const [tempEmail, settempEmail] = useState("tempMail initialstate");
+  const settingTempMail = (e) => {
+    settempEmail(e);
+  };
+  return (
+    <AppContext.Provider value={{ tempEmail, settingTempMail }}>
+      <div className="container">
+        <ToastContainer
+          position="bottom-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+
+        <Router>
+          {/* 
           <Navbar />
 
           <Row>
             <Col> */}
 
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/Navbar" component={Navbar} exact />
-          <Route path="/Form" component={Form} exact />
-          <Route path="/Allcourses" component={Allcourse} exact />
-          <Route path="/AdminAddCourses" component={AdminAddCourses} exact />
-          <Route path="/Admin" component={Admin} exact />
-          {/* <Route
-            path="/AdminUpdateCourses"
-            component={AdminUpdateCourses}
-            exact
-          /> */}
-        </Switch>
-      </Router>
-    </div>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/Navbar" component={Navbar} exact />
+            <Route path="/Form" component={Form} exact />
+            <Route path="/Allcourses" component={AllCourses} exact />
+            <Route path="/AdminAddCourses" component={AdminAddCourses} exact />
+            <Route path="/Admin" component={Admin} exact />
+            <Route
+              path="/AdminUpdateCourses"
+              component={AdminUpdateCourses}
+              exact
+            />
+            <Route path="/UserCourses" component={UserCourses} exact />
+            <Route path="/UserCart" component={UserCart} exact />
+          </Switch>
+        </Router>
+      </div>
+    </AppContext.Provider>
   );
 }
 

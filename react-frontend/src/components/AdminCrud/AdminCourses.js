@@ -4,10 +4,14 @@ import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { Button, Table } from "reactstrap";
 import BASE_URL from "../../services/UserService";
-import AdminUpdateCourses from "./AdminUpdateCourses";
+//import AdminUpdateCourses from "./AdminUpdateCourses";
 
 const AdminCourse = ({ course }) => {
-  //  const history = useHistory();
+  const history = useHistory();
+  const updateCourse = (courseObj) => {
+    let path = `/AdminUpdateCourses`;
+    history.push({ pathname: path, state: courseObj });
+  };
 
   const deleteCourse = (courseId) => {
     console.log(courseId);
@@ -25,7 +29,7 @@ const AdminCourse = ({ course }) => {
       .then(
         (response) => {
           toast.dark("course deleted");
-          console.log(response);
+          console.log(response.data);
         },
         (error) => {
           toast.dark("error");
@@ -48,12 +52,7 @@ const AdminCourse = ({ course }) => {
               Price: {course.price} Tutor: {course.author}
             </td>
             <td>
-              <Button
-                color="primary"
-                onClick={() => {
-                  console.log(course);
-                }}
-              >
+              <Button color="primary ml-3" onClick={() => updateCourse(course)}>
                 Update
               </Button>
               <Button

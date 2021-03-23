@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import validate from "./ValidateInfoLogin";
 import "./Form.css";
 import useLogin from "./useLogin";
+import { AppContext } from "./../App";
 
 const Login = ({ submitForm }) => {
+  const { settingTempMail } = useContext(AppContext);
   const { handleChange, handleSubmit, values, errors } = useLogin(
     submitForm,
     validate
   );
 
+  settingTempMail(values.email);
+
   return (
     <div className="LoginData">
       <form onSubmit={handleSubmit} className="form" noValidate>
         <div className="form-inputs">
-          <label className="form-label">Email</label>
+          <label className="login-label">Email</label>
           <input
             className="form-input"
             type="email"
@@ -25,7 +29,7 @@ const Login = ({ submitForm }) => {
         </div>
         {errors.email && <p>{errors.email}</p>}
         <div className="form-inputs">
-          <label className="form-label">Password</label>
+          <label className="login-label">Password</label>
           <input
             className="form-input"
             type="password"

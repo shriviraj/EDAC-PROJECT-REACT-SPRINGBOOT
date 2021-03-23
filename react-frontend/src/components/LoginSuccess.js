@@ -1,14 +1,8 @@
 import React from "react";
-import { Link, Redirect, Route } from "react-router-dom";
-import { ListGroup } from "reactstrap";
-//import { ListGroup } from "reactstrap";
+import {  Redirect, Route } from "react-router-dom";
+
 import "./Form.css";
-// import { toast } from "react-toastify";
-// import Allcourse from "./Allcourses";
-// import Admin from "./Admin";
-// import Navbar from "./Navbar/Navbar";
-import Allcourses from "./Allcourses";
-import Admin from "./Admin";
+
 
 const LoginSuccess = ({ whoIsThis }) => {
   console.log(whoIsThis + "  inside login success");

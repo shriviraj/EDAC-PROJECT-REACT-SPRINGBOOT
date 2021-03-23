@@ -1,24 +1,21 @@
 .AdminAddCourse-container {
-  background: linear-gradient(to right, #a72264 0%, #b13a3a 100%);
-
-  margin: 0px auto;
+  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(69, 93, 94) 100%);
+  margin: auto;
   width: 60%;
+  height: 600px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 30px;
-  height: 600px;
   display: grid;
-  margin-top: 40px;
 }
 
 .AdminAddCourse-container h2 {
-  padding-top: 20px;
+  margin: 3%;
   color: #fff;
 }
 
 .AdminAddCourse-content {
-  background: linear-gradient(to right, #a72264 0%, #b13a3a 100%);
-  border-radius: 0px;
+  background: #00000000;
   position: relative;
   margin-bottom: 10px;
 }
@@ -29,7 +26,7 @@
   margin-top: 5px;
   margin-left: 430px;
   border-radius: 2px;
-  
+
   background: linear-gradient(
     90deg,
     rgb(74, 140, 179) 0%,
@@ -54,10 +51,9 @@
 .AddCourseform-label {
   display: inline-block;
   font-size: 1rem;
-  margin-bottom: 7px;
-  margin-left: 0px;
   color: #fff;
 }
+
 .table {
   background: rgba(255, 255, 255, 0.623);
   border-radius: 0px;
@@ -68,17 +64,18 @@
 .form-input {
   margin: 10px auto;
   display: block;
-  padding-left: 30px;
-  /* outline: auto; */
   border-radius: 10px;
-  height: 40px;
-  width: 40%;
+  height: 2.2em;
+  width: 60%;
   border: none;
 }
 
 .form-group {
-  padding-left: 80px;
-  padding-right: 80px;
+  margin: auto;
+  margin-top: 0%;
+  width: 90%;
+  padding-left: 15%;
+  padding-right: 15%;
   opacity: 80%;
 }
 

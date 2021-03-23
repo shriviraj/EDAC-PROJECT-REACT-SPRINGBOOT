@@ -23,9 +23,9 @@ const AdminAllcourse = () => {
 
   const [courses, setCourses] = useState([]);
 
-  useEffect(() => {
+  useEffect((e) => {
     getAllCoursesFromServer();
-  });
+  }, []);
 
   return (
     <div>

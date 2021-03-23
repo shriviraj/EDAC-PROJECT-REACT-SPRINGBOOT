@@ -14,7 +14,7 @@ function Navbar() {
     <div>
       <nav className="NavbarItems">
         <h1 className="navbar-logo" onClick={LogoClicked}>
-          <i class="fa fa-book" aria-hidden="true">
+          <i className="fa fa-book" aria-hidden="true">
             {" "}
           </i>{" "}
           EducateNow

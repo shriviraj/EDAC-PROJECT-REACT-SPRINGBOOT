@@ -1,0 +1,97 @@
+.cards {
+  width: 220px;
+  height: 190px;
+  margin: 15px;
+  margin-right: 3%;
+  display: inline-block;
+  transition: 0.01s;
+  border: 0;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.678);
+}
+
+.cards:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.591);
+}
+
+.cards h5 {
+  color: rgb(247, 243, 243);
+  text-align: center;
+  padding-top: 20px;
+}
+
+.cards h6 {
+  text-align: left;
+  margin-left: 10%;
+}
+
+.buttons {
+  left: 13%;
+}
+.list-of-courses {
+  background-color: rgba(0, 0, 0, 0.401);
+  color: aliceblue;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+}
+
+.cartCheckout-btn btn {
+  font-size: 1.5rem;
+}
+
+.cartCheckout-btn {
+  font-weight: 700;
+  margin: auto;
+  margin-left: 40%;
+  margin-right: 40%;
+  display: block;
+  width: 20%;
+  height: 50px;
+  border-radius: 10%;
+  background: linear-gradient(
+    90deg,
+    rgb(74, 140, 179) 0%,
+    rgb(21, 200, 206) 100%
+  );
+}
+
+.cartCheckout-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(235, 92, 92) 0%,
+    rgb(87, 155, 231) 100%
+  );
+  transition: all 0.4s ease-out;
+}
+
+.UserCart-cards {
+  width: 220px;
+  height: 190px;
+  margin: 15px;
+  margin-right: 3%;
+  display: inline-block;
+  transition: 0.01s;
+  border: 0;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.639);
+}
+
+.UserCart-cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.469);
+}
+
+.UserCart-cards h5 {
+  color: rgb(43, 191, 255);
+  text-align: center;
+  padding-top: 20px;
+}
+
+.UserCart-cards h6 {
+  text-align: left;
+  margin-left: 10%;
+  padding-top: 3%;
+  color: aliceblue;
+}

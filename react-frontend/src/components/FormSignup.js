@@ -12,7 +12,7 @@ const FormSignup = ({ submitForm }) => {
 
   return (
     <div className="form-content-right">
-      <form onSubmit={handleSubmit} className="form" noValidate>
+      <form onSubmit={handleSubmit} className="formRight" noValidate>
         <h1>Learn new technologies with EducateNow. Register Now!!</h1>
         <div className="form-inputs">
           <label className="form-label">Username</label>
@@ -62,7 +62,7 @@ const FormSignup = ({ submitForm }) => {
           />
           {errors.password2 && <p>{errors.password2}</p>}
         </div>
-        <button className="form-input-btn" type="submit">
+        <button className="Register-form-input-btn" type="submit">
           Sign up
         </button>
       </form>

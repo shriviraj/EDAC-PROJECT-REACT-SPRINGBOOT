@@ -1,22 +1,30 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useHistory, useLocation } from "react-router";
 import { toast } from "react-toastify";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import BASE_URL from "../../services/UserService";
 import Navbar from "../Navbar2/Navbar";
 import "./Admin.css";
 
-const AdminUpdateCourses = ({ course }) => {
-
-  console.log(course + " from updateCourse");
+const AdminUpdateCourses = () => {
+  const { state } = useLocation();
+  const course = state;
+  console.log(state + " from updateCourse");
   const [values, setValues] = useState({
-    courseId: "",
-    courseName: "",
-    price: "",
-    author: "",
+    courseId: course.courseId,
+    courseName: course.courseName,
+    price: course.price,
+    author: course.author,
   });
+
+  const history = useHistory();
+  const IGotClicked = () => {
+    let path = `/Admin`;
+    history.push(path);
+  };
   //form handler function
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -24,6 +32,8 @@ const AdminUpdateCourses = ({ course }) => {
       [name]: value,
     });
   };
+  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +45,7 @@ const AdminUpdateCourses = ({ course }) => {
     axios.post(`${BASE_URL}/courses`, data).then(
       (response) => {
         console.log(response);
-        toast.success("success");
+        toast.success("Course Updated Successfully");
       },
       (error) => {
         console.log(error);
@@ -48,13 +58,13 @@ const AdminUpdateCourses = ({ course }) => {
       <Navbar />
       {/* <h1 className=" text-center my-3 " >Add/Update the course details</h1> */}
       <Form className="AdminAddCourse-container" onSubmit={handleSubmit}>
-        <h2 className="text-center ">- Add Course -</h2>
+        <h2 className="text-center ">- Update Course -</h2>
         <FormGroup className="AdminAddCourse-content">
           <Label className="AddCourseform-label" htmlFor="courseId">
             Course-ID:
           </Label>
           <Input
-            value={course.courseId}
+            value={values.courseId}
             className="form-input"
             type="number"
             placeholder="enter here"
@@ -68,7 +78,7 @@ const AdminUpdateCourses = ({ course }) => {
             Course Name:
           </Label>
           <Input
-            value={course.courseName}
+            value={values.courseName}
             className="form-input"
             type="text"
             placeholder="enter here"
@@ -82,7 +92,7 @@ const AdminUpdateCourses = ({ course }) => {
             Course Price:
           </Label>
           <Input
-            value={course.price}
+            value={values.price}
             className="form-input"
             type="number"
             placeholder="enter here"
@@ -96,7 +106,7 @@ const AdminUpdateCourses = ({ course }) => {
             Course Tutor:
           </Label>
           <Input
-            value={course.author}
+            value={values.author}
             className="form-input"
             type="text"
             placeholder="enter here"
@@ -106,7 +116,10 @@ const AdminUpdateCourses = ({ course }) => {
           />
         </FormGroup>
         <Container className="text-center">
-          <Button type="submit" color="success">
+          <Button color="primary" onClick={IGotClicked} >
+            Go Back
+          </Button>
+          <Button type="submit" color="success ml-3 ">
             Add Course
           </Button>
         </Container>

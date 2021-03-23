@@ -1,33 +1,36 @@
 .NavbarItems {
+  position: sticky;
   background: rgba(0, 2, 2, 0.562);
+  margin: auto;
+  margin-top: 1%;
   width: 100%;
   height: 80px;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  font-size: 1.2rem;
   border-radius: 15px;
-  margin-bottom: 40px;
-  margin-top: 0%;
+  margin-bottom: 3%;
 }
 
 .navbar-logo {
+  position: relative;
   color: #fff;
-  justify-self: start;
-  margin:auto ;
-  margin-left: 400px;
+  margin: auto;
   cursor: pointer;
+  text-align: center;
+  left: 5%;
 }
+
 .fa-book {
-  margin-left: 0.5rem;
-  margin-bottom: 0.5rem;
+  position: relative;
   font-size: 2rem;
 }
+
 .navbar h5 {
   align-items: flex-end;
   color: #fff;
 }
-.nav-Links{
- margin-right: 30px;
+
+.nav-Links {
+  margin-right: 30px;
   color: #fff;
 }

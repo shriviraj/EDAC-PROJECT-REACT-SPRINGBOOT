@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Container } from "reactstrap";
 import LoginSuccess from "./LoginSuccess";
 import Navbar from "./Navbar/Navbar";
@@ -7,6 +7,7 @@ import Login from "./Login";
 const Home = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [whoIsThis, setWhoIsThis] = useState(" ");
+
   function submitForm(val, who) {
     setIsSubmitted(val);
     console.log("inside form " + val + " " + who);
